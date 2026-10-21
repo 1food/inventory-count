@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f5f4">
+  <title>재물조사 · 기관 설정</title>
+  <script>
+    (() => {
+      // 앱과 같은 테마(저장값 → 기기 설정)를 그리기 전에 적용한다.
+      try {
+        const saved = localStorage.getItem("inventory-theme");
+        document.documentElement.dataset.theme = saved === "dark" || saved === "light"
+          ? saved : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (_) {
+        document.documentElement.dataset.theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+    })();
+  </script>
+  <link rel="icon" href="/brand/logo">
+  <link rel="preload" href="/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/app.css">
+  <script type="module" src="/js/setup.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="brand-mark"><img id="topLogo" src="/brand/logo" alt="" aria-hidden="true"></span>
+      <h1 class="topbar-title">기관 설정</h1>
+      <div class="topbar-actions"><a class="text-button" id="toApp" href="/" hidden>앱으로</a></div>
+    </div>
+  </header>
+  <main id="app" class="app-shell setup" aria-live="polite"><div class="skeleton tall"></div></main>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <div class="loading" id="loading" role="status" aria-live="polite" hidden><div class="spinner"></div><b id="loadingText">불러오는 중</b></div>
+</body>
+</html>

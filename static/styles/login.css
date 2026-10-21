@@ -1,0 +1,21 @@
+*{box-sizing:border-box}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+html{font-family:var(--font-sans);background:var(--color-secondary);color:var(--color-ink);font-size:var(--type-body-md-size);line-height:var(--type-body-md-line);letter-spacing:var(--type-body-md-track);-webkit-font-smoothing:antialiased}
+body{display:grid;min-height:100dvh;margin:0;padding:var(--space-lg);place-items:center;word-break:keep-all;overflow-wrap:break-word}
+.card{position:relative;overflow:hidden;width:min(100%,var(--layout-login));padding:var(--space-xl) var(--space-lg);border:1px solid var(--color-hairline);border-radius:var(--radius-xl);background:var(--color-canvas);box-shadow:var(--shadow-level-2);text-align:center}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:var(--space-3xs);background:var(--color-accent)}
+.card .logo{display:block;height:36px;width:auto;max-width:70%;margin:0 auto var(--space-sm);object-fit:contain}
+.card #surveyor{margin-bottom:var(--space-2xs)}
+.card .demo{margin:0 0 var(--space-md);padding:var(--space-xs);border-radius:var(--radius-md);background:var(--color-accent-soft);color:var(--color-ink);font-size:var(--type-body-sm-size);line-height:var(--type-body-sm-line)}
+.card .demo b{color:var(--color-primary);font-size:var(--type-body-md-size);font-variant-numeric:tabular-nums}
+.card .demo small{display:block;margin-top:var(--space-3xs);color:var(--color-ink-secondary);font-size:var(--type-caption-size)}
+.card h1{margin:0 0 var(--space-3xs);font-size:var(--type-heading-1-size);font-weight:var(--type-heading-1-weight);line-height:var(--type-heading-1-line);letter-spacing:var(--type-heading-1-track)}
+.card p{margin:0 0 var(--space-md);color:var(--color-ink-muted);font-size:var(--type-body-sm-size)}
+.card input,.card button{width:100%;min-height:var(--size-control);font:inherit;font-size:var(--type-body-md-size)}
+.card input{padding:var(--space-2xs) var(--space-xs);border:1px solid var(--color-field-border);border-radius:var(--radius-md);background:var(--color-canvas);color:var(--color-ink);text-align:center}
+.card input:focus-visible{border-color:var(--color-primary);outline:none;box-shadow:var(--ring-focus)}
+.card button{margin-top:var(--space-xs);padding:var(--space-xs) var(--space-lg);border:0;border-radius:var(--radius-lg);background:var(--color-primary-fill);color:var(--color-on-primary);font-size:var(--type-button-size);font-weight:var(--type-button-weight)}
+.card button:active{background:var(--color-primary-fill-active);transform:scale(.98)}
+.error{min-height:var(--space-lg);margin-top:var(--space-2xs);color:var(--color-danger);font-size:var(--type-caption-size)}
+@media(max-width:600px){body{min-height:100dvh;padding:var(--space-sm)}.card{padding:var(--space-lg) var(--space-sm)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}

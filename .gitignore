@@ -1,0 +1,26 @@
+# 비밀값
+.env
+
+# 런타임·가상환경 (ABI별 재설치 대상)
+.runtime/
+.runtime-py*/
+.venv/
+python/
+__pycache__/
+*.pyc
+
+# 실사 데이터·백업 (운영 데이터 — 커밋 금지)
+data/
+backups/
+
+# 기관 로고 (기관별 파일)
+branding/*
+!branding/README.md
+
+# 배포 패키지 출력물·대용량 바이너리
+release/
+*.exe
+*.zip
+
+# 로컬 전용 설정(배포 검사 단어 목록 등)
+*.local.txt

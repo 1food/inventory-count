@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="재물조사">
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="#003b90"/>
+  <rect x="14" y="11" width="20" height="27" rx="3" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <rect x="19" y="8" width="10" height="6" rx="2" fill="#ffffff"/>
+  <path d="M18.5 25.5l4 4 7-8" fill="none" stroke="#f08300" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
