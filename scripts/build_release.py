@@ -186,6 +186,10 @@ def build_installer(files: list[Path]) -> int:
         target = stage / path.relative_to(ROOT)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(path, target)
+    # 설치 마법사는 BOM이 없는 텍스트를 시스템 코드페이지로 읽어 한글 저작권자가 깨진다.
+    # 저장소의 LICENSE는 GitHub 인식을 위해 BOM 없이 두고, 설치 프로그램용 사본에만 BOM을 붙인다.
+    license_copy = stage / "LICENSE"
+    license_copy.write_bytes(b"\xef\xbb\xbf" + license_copy.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
     done = subprocess.run([str(iscc), "/Qp", f"/DAppVersion={version()}", f"/DSourceDir={stage}",
                            f"/DOutputDir={out_dir}", str(ROOT / "installer" / "inventory-count.iss")])
     shutil.rmtree(stage, ignore_errors=True)

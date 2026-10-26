@@ -152,7 +152,7 @@ function render() {
       <ul class="hints" id="codeHints"></ul>
     </section>
     <section class="card setup-step"><h3><span>3</span>고정자산대장</h3>
-      <p class="field-help">회계 프로그램에서 내려받은 고정자산대장(.xlsx)을 그대로 올리세요. 열 순서는 달라도 되며 자산코드·자산명·현재수량 열이 있어야 합니다.</p>
+      <p class="field-help">희망이음 ERP에서 내려받은 고정자산대장(.xlsx)을 그대로 올리세요. 열 순서는 달라도 되지만 자산코드·자산명·현재수량 열은 있어야 합니다.</p>
       <div id="ledgerInfo">${ledgerSummary(s.ledger)}</div>
       ${fileButton("ledgerFile", "고정자산대장 올리기 (끌어다 놓아도 됩니다)", ".xlsx", "wide")}
       ${s.results ? `<p class="field-help">이미 저장한 실사 결과가 ${s.results}건 있습니다. 조사 도중 대장을 바꾸면 코드가 달라진 결과는 빠질 수 있습니다.</p>` : ""}
